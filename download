@@ -1,0 +1,26 @@
+#!/bin/bash
+set -e
+
+source ./setup.bash
+
+FOLDER="$HOME/.synthv"
+TEMP=$(mktemp -d)
+
+cd $TEMP
+
+wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton11-11/GE-Proton11-11-x86_64.tar.gz
+if echo "$PROTON_TAR_HASH  $PROTON_TAR" | sha512sum -c --status ; then
+  mv $PROTON_TAR $FOLDER
+else
+  echo "Incorrect GE-Proton hash, check $TEMP"
+  exit 1
+fi
+
+wget https://download.dreamtonics.com/svstudio2/svstudio2-pro-setup-latest.exe
+if echo "$STEUP_HASH  $SETUP" | sha512sum -c --status ; then
+  mv $SETUP $FOLDER
+else
+  echo "Incorrect SynthV2 setup exem check $TEMP"
+  exit 1
+fi
+

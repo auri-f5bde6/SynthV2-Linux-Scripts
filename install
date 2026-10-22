@@ -1,0 +1,29 @@
+#!/bin/bash
+set -e
+
+DESKTOP_LOC="$HOME/.local/share/applications"
+DESKTOP_FILE="$(pwd)/synthv2.desktop"
+
+source ./setup.bash
+
+export WINEPREFIX="$(pwd)/prefix"
+if [[ ! -d "$WINEPREFIX" ]] then
+  mkdir $WINEPREFIX
+fi
+
+if [[ -f "$PROTON_TAR" && -f "$SETUP" ]] then
+    
+  if [[ ! -d "$PROTON_PATH" ]] then
+    mkdir $PROTON_PATH
+    
+    TEMP=$(mktemp -d)
+    tar -xzf $PROTON_TAR -C $TEMP
+    
+    mv $TEMP/*/* $PROTON_PATH
+  fi;
+  desktop-file-install --dir=$HOME/.local/share/applications --set-key=Exec --set-value="$FOLDER/synthv2 %u" $DESKTOP_FILE
+  umu-run winetricks webview2 || true
+  umu-run $SETUP
+else
+  echo bwah
+fi;

@@ -1,0 +1,20 @@
+#!/bin/bash
+set -e
+
+FOLDER="$HOME/.synthv"
+cd $FOLDER
+export PROTON_PATH="$(pwd)/proton"
+export WINEPREFIX="$(pwd)/prefix"
+
+SYNTHV_EXE="$WINEPREFIX/drive_c/Program Files/Synthesizer V Studio 2 Pro/synthv-studio.exe"
+
+if [[ ! -f "$SYNTHV_EXE" ]] then
+  echo "Cannot find $SYNTHV_EXE, have you ran install yet?"
+  exit 1
+fi
+
+if [[ $@ == "dreamtonics-svstudio2://"* ]] then
+  wl-copy $@
+else
+  umu-run "$SYNTHV_EXE" $@
+fi
