@@ -25,5 +25,6 @@ if [[ -f "$PROTON_TAR" && -f "$SETUP" ]] then
   umu-run winetricks webview2 || true
   umu-run $SETUP
 else
-  echo bwah
+  echo "Please run ./download first"
+  exit 1
 fi;
