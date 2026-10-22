@@ -1,1 +1,9 @@
 Jank scripts to run SynthV on linux (also a excuse to finally learn bash)
+
+Run
+```
+./download
+./install
+```
+
+After logging in the browser, just allow browser to open app and return to the app.
