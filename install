@@ -4,6 +4,11 @@ set -e
 DESKTOP_LOC="$HOME/.local/share/applications"
 DESKTOP_FILE="$(pwd)/synthv2.desktop"
 
+FOLDER="$HOME/.synthv"
+
+cp -fr synthv2 $FOLDER
+cp -fr setup.bash $FOLDER
+
 source ./setup.bash
 
 export WINEPREFIX="$(pwd)/prefix"

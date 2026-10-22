@@ -7,8 +7,6 @@ if [[ ! -d "$FOLDER" ]] then
   mkdir $FOLDER
 fi
 
-cp -fr synthv2 $FOLDER
-
 cd $FOLDER
 
 PROTON_TAR="GE-Proton11-11-x86_64.tar.gz"

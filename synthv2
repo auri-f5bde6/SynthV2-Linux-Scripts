@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
 
-source ./setup.bash
+FOLDER="$HOME/.synthv"
+source $FOLDER/setup.bash
 
 SYNTHV_EXE="$WINEPREFIX/drive_c/Program Files/Synthesizer V Studio 2 Pro/synthv-studio.exe"
 
