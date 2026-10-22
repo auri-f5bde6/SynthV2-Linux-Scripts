@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
-Name=Synthesizer V Studio 2 Pro
+Name=Synthesizer V Studio 2
 # Exec=PATH_TO_HOME/.synthv/synthv2 %u
 MimeType=x-scheme-handler/dreamtonics-svstudio2;application/x-svp;
