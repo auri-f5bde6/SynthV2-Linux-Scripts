@@ -5,7 +5,7 @@ Run
 ./download
 ./install
 ```
-
+Then search Synthesizer V in your app menu (might take a few seconds)
 After logging in the browser, just allow browser to open app and return to the app.
 
 ./update /path/to/update/exe
