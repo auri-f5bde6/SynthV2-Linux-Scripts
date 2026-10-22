@@ -7,3 +7,6 @@ Run
 ```
 
 After logging in the browser, just allow browser to open app and return to the app.
+
+./update /path/to/update/exe
+For updating
